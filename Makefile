@@ -78,7 +78,7 @@ all: $(REBAR)
 	@REBAR_PROFILE=dev $(REBAR) do compile
 
 test: $(REBAR) epmd
-	@REBAR_PROFILE=test $(REBAR) do eunit 
+	@REBAR_PROFILE=test $(REBAR) do eunit --dir="test"
 
 dialyzer: $(REBAR)
 	@REBAR_PROFILE=dev $(REBAR) do dialyzer | fgrep -v -f $(CURDIR)/dialyzer.ignore
