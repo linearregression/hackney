@@ -26,7 +26,8 @@ http_requests_test_() ->
      end}.
 
 start() ->
-    hackney:start(),
+    _ = hackney:stop(),
+    ok = hackney:start(),
     ok.
 
 stop(ok) -> ok.
